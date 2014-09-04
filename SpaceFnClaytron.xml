@@ -28,9 +28,9 @@
       <appendix>It sets up the space bar as the modifier</appendix>
       <appendix></appendix>
       <appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix>
-      <appendix>- Initial modifier wait: 150ms</appendix>
-      <appendix>- Timeout: 300ms</appendix>
-      <appendix>- Delay until repeat: 500ms</appendix>
+      <appendix>- Initial modifier wait: 200ms</appendix>
+      <appendix>- Timeout: 400ms</appendix>
+      <appendix>- Delay until repeat: 600ms</appendix>
       <identifier>com.claytron.spacefn</identifier>
       <!-- Space is our new Fn modifier -->
       <autogen>--KeyOverlaidModifier-- KeyCode::SPACE, KeyCode::VK_MODIFIER_EXTRA4, KeyCode::SPACE</autogen>
