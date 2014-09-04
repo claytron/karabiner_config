@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+  <!-- Vortex Poker II info -->
+  <devicevendordef>
+    <vendorname>VORTEX</vendorname>
+    <vendorid>0x0f39</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>POKER_II</productname>
+    <productid>0x0611</productid>
+  </deviceproductdef>
+
+  <!-- Let's get spacey. A custom version of the SpaceFN setup -->
+  <include path="SpaceFnClaytron.xml" />
+  
+  <!-- My custom settings -->
+  <item>
+    <name>claytron</name>
+    <item>
+      <!-- Make shell programming sane on the Poker II -->
+      <name>Switch ESC and Backquote (Poker II)</name>
+      <appendix>Check this box to have the ESC key actually be back tick / tilde.</appendix>
+      <appendix>This is important if you want a sane shell programming experience.</appendix>
+      <identifier>com.claytron.general.esc_poker</identifier>
+      <device_only>DeviceVendor::VORTEX, DeviceProduct::POKER_II</device_only>
+      <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+      <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+    </item>
+    <item>
+      <name>Claytron Specials</name>
+      <appendix>You don't need these, but I do.</appendix>
+      <identifier>com.claytron.special</identifier>
+      <!-- My hotkey for the Yankring / pasteboard - claytron -->
+      <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::EXTRA4, KeyCode::V, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L</autogen>
+      <!-- Quit what you're doing and start the screen saver - claytron -->
+      <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA4, KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L</autogen>
+      <!-- My hotkey for bringing Up the launcher - claytron -->
+      <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::EXTRA4, KeyCode::SPACE, ModifierFlag::CONTROL_L</autogen>
+    </item>
+  </item>
+</root>

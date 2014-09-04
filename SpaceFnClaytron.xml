@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<root>
+  <!--
+  Adapted from:
+  http://geekhack.org/index.php?topic=51069.0
+
+  Modified by claytron to meet his impecible standards
+
+  This is intended for use with the Poker II, but also works with a mac
+  keyboard since there is nothing really special about these mappings.
+
+  My private.xml forces ESCAPE to be BACKQUOTE so that using the shell
+  is bearable with the Poker II. This allows the SpaceFN to be usable on
+  any keyboard.
+
+  I set up both WASD and HJKL for arrow keys, but obviously prefer the
+  vim style.
+
+  In addition to volume adjustment, there is also brightness mapped to C
+  and V, nothing special about those letters, just unused and close to
+  the N, M and Comma of the Poker II for volume.
+  -->
+  <!-- lets make this one special group - claytron -->
+  <item>
+    <name>SpaceFN (claytron edition)</name>
+    <item>
+      <appendix>You must check at least this box to activate the SpaceFN features</appendix>
+      <appendix>It sets up the space bar as the modifier</appendix>
+      <appendix></appendix>
+      <appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix>
+      <appendix>- Initial modifier wait: 150ms</appendix>
+      <appendix>- Timeout: 300ms</appendix>
+      <appendix>- Delay until repeat: 500ms</appendix>
+      <identifier>com.claytron.spacefn</identifier>
+      <!-- Space is our new Fn modifier -->
+      <autogen>--KeyOverlaidModifier-- KeyCode::SPACE, KeyCode::VK_MODIFIER_EXTRA4, KeyCode::SPACE</autogen>
+    </item>
+    <item>
+      <name>HJKL Arrows</name>
+      <!-- Vim style mofos. - claytron -->
+      <appendix>Space + HJKL = arrows</appendix>
+      <identifier>com.claytron.spacefn.hjkl</identifier>
+      <!-- Arrow keys: HJKL, vim style - claytron -->
+      <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::EXTRA4, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA4, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::EXTRA4, KeyCode::CURSOR_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::EXTRA4, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+    <item>
+      <name>WASD Arrows</name>
+      <!-- WASD to match Poker II. - claytron -->
+      <appendix>Space + WASD = arrows</appendix>
+      <identifier>com.claytron.spacefn.wasd</identifier>
+      <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA4, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::EXTRA4, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::EXTRA4, KeyCode::CURSOR_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::EXTRA4, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+    <item>
+      <name>Repeating Space</name>
+      <appendix>Space + B, to repeat a space character</appendix>
+      <identifier>com.claytron.spacefn.actual_space</identifier>
+      <!-- space + B is an autorepeat space -->
+      <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::EXTRA4, KeyCode::SPACE</autogen>
+    </item>
+    <item>
+      <name>F-Keys</name>
+      <appendix>Space + 1..0, - and = for F-Keys</appendix>
+      <identifier>com.claytron.spacefn.eff</identifier>
+      <autogen>--KeyToKey-- KeyCode::KEY_1, ModifierFlag::EXTRA4, KeyCode::F1</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_2, ModifierFlag::EXTRA4, KeyCode::F2</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_3, ModifierFlag::EXTRA4, KeyCode::F3</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_4, ModifierFlag::EXTRA4, KeyCode::F4</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_5, ModifierFlag::EXTRA4, KeyCode::F5</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::EXTRA4, KeyCode::F6</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_7, ModifierFlag::EXTRA4, KeyCode::F7</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::EXTRA4, KeyCode::F8</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_9, ModifierFlag::EXTRA4, KeyCode::F9</autogen>
+      <autogen>--KeyToKey-- KeyCode::KEY_0, ModifierFlag::EXTRA4, KeyCode::F10</autogen>
+      <autogen>--KeyToKey-- KeyCode::MINUS, ModifierFlag::EXTRA4, KeyCode::F11</autogen>
+      <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::EXTRA4, KeyCode::F12</autogen>
+    </item>
+    <item>
+      <name>ESC on space + E</name>
+      <appendix>Check this box to have space + e do Escape.</appendix>
+      <identifier>com.claytron.spacefn.esc_on_e</identifier>
+      <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA4, KeyCode::ESCAPE</autogen>
+    </item>
+    <!-- modified to match the poker II default layout - claytron -->
+    <item>
+      <name>Mute, Vol-, Vol+</name>
+      <appendix>Check this box to have space + N, M and Comma do Vol-, Vol+ and Mute.</appendix>
+      <identifier>com.claytron.spacefn.vol</identifier>
+      <autogen>--KeyToConsumer-- KeyCode::N, ModifierFlag::EXTRA4, ConsumerKeyCode::VOLUME_DOWN</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::M, ModifierFlag::EXTRA4, ConsumerKeyCode::VOLUME_UP</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::COMMA, ModifierFlag::EXTRA4, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    </item>
+    <!-- new feature, brightness - claytron -->
+    <item>
+      <name>Brightness</name>
+      <appendix>Check this box to have space + C and V do brightness - and +</appendix>
+      <identifier>com.claytron.spacefn.bright</identifier>
+      <autogen>--KeyToConsumer-- KeyCode::C, ModifierFlag::EXTRA4, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::V, ModifierFlag::EXTRA4, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+    </item>
+    <!-- poker II style. - clayton -->
+    <item>
+      <name>PgUp, PgDn, Home, End</name>
+      <appendix>HOME/END: Space + ; = Home Space + . = End (begin and end of DOCUMENT)</appendix>
+      <appendix>PAGE UP/DOWN: Space + ' = PgUp Space + / = PgDn (cursor does NOT move)</appendix>
+      <identifier>com.claytron.spacefn.pg_home_end</identifier>
+      <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA4, KeyCode::HOME</autogen>
+      <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::EXTRA4, KeyCode::END</autogen>
+      <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::EXTRA4, KeyCode::PAGEUP</autogen>
+      <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::EXTRA4, KeyCode::PAGEDOWN</autogen>
+    </item>
+    <item>
+      <name>PrintScreen, ScrollLock, Pause and INS</name>
+      <appendix>Check this box to have space + P, [ and ] do PrtScr, ScrLk and Pause.</appendix>
+      <identifier>com.claytron.spacefn.prtsc</identifier>
+      <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::EXTRA4, KeyCode::PC_PRINTSCREEN</autogen>
+      <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA4, KeyCode::PC_SCROLLLOCK</autogen>
+      <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::EXTRA4, KeyCode::PC_PAUSE</autogen>
+      <!-- INS on space + I. Poker II style. - claytron -->
+      <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::EXTRA4, KeyCode::PC_INSERT</autogen>
+    </item>
+    <item>
+      <name>Backspace DEL</name>
+      <appendix>Space + backspace forward deletes</appendix>
+      <identifier>com.claytron.spacefn.del</identifier>
+      <autogen>--KeyToKey-- KeyCode::DELETE, ModifierFlag::EXTRA4, KeyCode::FORWARD_DELETE</autogen>
+    </item>
+    <item>
+      <name>Enter backspace</name>
+      <appendix>Space + enter = delete</appendix>
+      <identifier>com.claytron.spacefn.enter_del</identifier>
+      <autogen>--KeyToKey-- KeyCode::RETURN, ModifierFlag::EXTRA4, KeyCode::DELETE</autogen>
+    </item>
+  </item>
+</root>
