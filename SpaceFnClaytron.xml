@@ -86,6 +86,12 @@
       <identifier>com.claytron.spacefn.esc_on_e</identifier>
       <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA4, KeyCode::ESCAPE</autogen>
     </item>
+    <item>
+      <name>TAB switcher</name>
+      <appendix>Check this box to have space + tab activate the app switcher on OS X.</appendix>
+      <identifier>com.claytron.spacefn.tab_switch</identifier>
+      <autogen>--KeyToKey-- KeyCode::TAB, ModifierFlag::EXTRA4, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    </item>
     <!-- modified to match the poker II default layout - claytron -->
     <item>
       <name>Mute, Vol-, Vol+</name>
