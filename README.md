@@ -2,7 +2,7 @@ SpaceFnClaytron was inspired by [The SpaceFN Layout][spacefn-layout] from the [g
 I primarily type on a Poker II or a MacBook Pro keyboard.
 
 The Poker II is a 60% keyboard,
-so it doesn't have function keys,
+so it doesn't have arrow keys or function keys,
 and escape is in a funny spot.
 This was my primary motivation for embarking down this path.
 
